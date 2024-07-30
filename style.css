@@ -1,0 +1,117 @@
+:root {
+    --color-violet: hsl(263, 55%, 52%);
+    --color-dark-grayish-blue: hsl(217, 19%, 35%);
+    --color-blackish-blue: hsl(219, 29%, 14%);
+    --color-white: #fff;
+    --color-grey: hsl(0, 0%, 81%);
+    --color-light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    padding: 2rem;
+    background-color: var(--color-light-grayish-blue);
+    color: var(--color-grey);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+}
+
+.testimonials {
+    display: grid;
+    gap: 2rem;
+}
+
+.testimonial {
+    padding: 3rem;
+    border-radius: 9px;
+    max-width: 80rem;
+
+    color: var(--color-blackish-blue);
+    background-color: var(--color-white);
+}
+
+.testimonial--violet {
+    background-color: var(--color-violet);
+    color: var(--color-light-grayish-blue);
+}
+
+.testimonial--grayish-blue {
+    background-color: var(--color-dark-grayish-blue);
+    color: var(--color-light-grayish-blue);
+}
+
+.testimonial--dark-blue {
+    background-color: var(--color-blackish-blue);
+    color: var(--color-light-grayish-blue);
+}
+
+.testimonial__customer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial__customer-avatar {
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    max-width: 42px;
+}
+
+.testimonial__title {
+    margin-bottom: 2rem;
+}
+
+.testimonial__customer-title {
+    opacity: 0.5;
+}
+
+.testimonial__text {
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+@media screen and (min-width: 480px) {
+    .testimonials {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .testimonial:first-child,
+    .testimonial:nth-child(4),
+    .testimonial:nth-child(5) {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .testimonials {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .testimonial:nth-child(5) {
+        grid-column: 4;
+        grid-row: 1 / 3;
+    }
+}
